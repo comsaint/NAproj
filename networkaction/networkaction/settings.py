@@ -52,8 +52,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #db migrations
-    'south',
+
     #allauth
     # The Django sites framework is required
     'django.contrib.sites',
