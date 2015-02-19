@@ -52,7 +52,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'vote',
+    #db migrations
+    'south',
+    #allauth
     # The Django sites framework is required
     'django.contrib.sites',
 
@@ -89,6 +91,8 @@ INSTALLED_APPS = (
     'allauth.socialaccount.providers.vk',
     'allauth.socialaccount.providers.weibo',
     'allauth.socialaccount.providers.xing',
+    
+    'vote',
 )
 
 SITE_ID = 1
