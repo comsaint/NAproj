@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Detail page</title>
+</head>
+
+<h1>{{ question.question_title }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'vote:voting' question.id %}" method="post">
+{% csrf_token %}	<!-- Cross Site Request Forgeries, use when need to modify data-->
+
+{% for choice in question.CHOICE_TEXT %}
+    <input type="radio" name="choice" id="{{ forloop.counter }}" value="{{choice}}"/>
+    <label for="{{choice}}">{{ choice }}</label><br />
+{% endfor %}
+<input type="submit" value="Vote" />
+
+</form>
+
+</html>

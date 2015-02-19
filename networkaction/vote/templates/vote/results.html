@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<title>Results page</title>
+<h1>{{ question.question_title }}</h1>
+<!--
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+-->
+<ul>
+<li>YES -- {{question.vote_count_YES}} vote{{ question.vote_count_YES|pluralize }}</li>
+<li>NO -- {{question.vote_count_NO}} vote{{ question.vote_count_NO|pluralize }}</li>
+<li>ABSTAIN -- {{question.vote_count_ABSTAIN}} vote{{ question.vote_count_ABSTAIN|pluralize }}</li>
+<p>
+<a href="{% url 'vote:detail' question.id %}">Vote again?</a>
+</p>
+</ul>
